@@ -30,7 +30,7 @@ if (process.env.NODE_ENV !== "production") {
   // connect to mongodb
   (async () => {
     try {
-      await connect_mongodb();
+      await db();
     } catch (err) {
       console.error(err);
       process.exit(1);

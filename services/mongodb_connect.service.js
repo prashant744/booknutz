@@ -4,7 +4,11 @@ const mongoose = require("mongoose");
 let gfs = null;
 
 function get_mongodb_url() {
-  return process.env.MONGO_URL;
+  return mongoose.connect(process.env.MONGODB_URI, err => {
+    if(err) 
+        console.log(err);
+    } 
+);
 }
 
 async function connect_mongodb() {
