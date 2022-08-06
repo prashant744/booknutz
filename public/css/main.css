@@ -1,0 +1,105 @@
+@import "./navbar.css";
+@import "./book.css";
+@import "./auth.css";
+
+:root {
+  --color-base-hue: 200;
+  --color-danger-hue: calc(var(--color-base-hue) - 190);
+  --color-success-hue: calc(var(--color-base-hue) - 60);
+  --color-background-dark: hsl(var(--color-base-hue), 100%, 30%);
+  --color-background-light: hsl(var(--color-base-hue), 100%, 80%);
+  --color-text-dark: hsl(var(--color-base-hue), 100%, 5%);
+  --color-text-light: hsl(var(--color-base-hue), 100%, 95%);
+  --color-border: hsl(var(--color-base-hue), 100%, 60%);
+  --color-danger: hsl(var(--color-danger-hue), 90%, 60%);
+  --color-secondary-hue: calc(var(--color-base-hue) + 50);
+  --color-link-dark: hsl(var(--color-base-hue), 100%, 16%);
+}
+
+* {
+  box-sizing: border-box;
+}
+
+a {
+  text-decoration: none;
+}
+
+ul {
+  padding: 0px 2vw;
+  list-style: none;
+}
+
+body {
+  background: linear-gradient(
+    to right,
+    var(--color-background-dark),
+    var(--color-background-light)
+  );
+  max-width: 1200px;
+  margin: auto;
+  color: var(--color-text-dark);
+  font-size: 16px;
+  font-family: system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto,
+    Oxygen, Ubuntu, Cantarell, "Open Sans", "Helvetica Neue", sans-serif;
+}
+
+.normalBtn {
+  width: 60%;
+  min-width: 100%;
+  font-size: 1rem;
+  cursor: pointer;
+  background-color: var(--color-danger);
+  color: white;
+  text-align: center;
+  padding: 0.4rem;
+  border-radius: 0.5rem;
+  border: 1px solid var(--color-border);
+}
+
+.submitBtn{
+  min-height: min(max-content, 25px);
+}
+
+#error-msg {
+  color: hsl(var(--color-danger-hue), 100%, 30%);
+  background-color: rgba(255, 245, 240, 0.4);
+  padding: 0.8rem;
+  margin: 0.8rem;
+  font-size: 1.4rem;
+  font-weight: bold;
+}
+
+#success-msg {
+  color: hsl(var(--color-success-hue), 100%, 20%);
+  background-color: rgba(255, 245, 240, 0.4);
+  padding: 0.8rem;
+  margin: 0.8rem;
+  font-size: 1.4rem;
+  font-weight: bold;
+}
+
+#error-404 {
+  text-align: center;
+  margin: 3rem;
+}
+
+@media (max-width: 1200px) {
+  body {
+    padding: 2rem;
+  }
+}
+
+@media (max-width: 500px) {
+  body {
+    text-align: center;
+  }
+
+  #error-404 {
+    --error-404-margin-sides: min(1.5vw, 1.5rem);
+
+    margin-top: 3rem;
+    margin-bottom: 3rem;
+    margin-left: var(--error-404-margin-sides);
+    margin-right: var(--error-404-margin-sides);
+  }
+}

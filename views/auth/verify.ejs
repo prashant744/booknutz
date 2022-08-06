@@ -1,0 +1,40 @@
+<div class="user-input-page verification-page">
+    <form action="/auth/send-mail" method="POST">
+      <% if(mailJustSent && mailJustSent == true) { %>
+      <button class="normalBtn" id="send-mail-btn" type="submit" disabled>
+        Send/Re-Send Mail for Verification
+      </button>
+      <% } else { %>
+      <button class="normalBtn" id="send-mail-btn" type="submit">
+        Send/Re-Send Mail for Verification
+      </button>
+      <% } %>
+    </form>
+  
+    <form action="/auth/verify" method="POST">
+      <input
+        type="text"
+        pattern="[0-9]{6}"
+        placeholder="Enter 6-digit OTP sent in mail"
+        name="otp"
+        required
+      />
+  
+      <button class="normalBtn submitBtn" type="submit">Submit OTP</button>
+    </form>
+  
+    <div class="verification-page-note-wrapper">
+      <p class="verification-page-note">
+        <b><u>Note:</u></b> Please click the <b><u>Send Mail</u></b> button above, to initiate the
+        mail verification.
+        <br>
+        We would then be sending mail to <b><%= user.email %></b> for verification..
+      </p>
+    </div>
+  </div>
+  
+  <script>
+    setTimeout(() => {
+      document.querySelector("#send-mail-btn").removeAttribute("disabled");
+    }, 3 * 60 * 1000); // 3 minutes
+  </script>

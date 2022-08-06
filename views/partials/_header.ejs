@@ -1,0 +1,17 @@
+<nav class="header-nav">
+    <a href="/" class="header-title">
+      <h3>booknutz</h3>
+    </a>
+    <ul class="nav-links">
+      <% if(user == null) { %>
+      <li><a class="header-link" href="/auth/login">Login</a></li>
+      <li><a class="header-link" href="/auth/signup">Sign Up</a></li>
+      <% } else { %>
+      <li><a class="header-link" href="/user/logout">Logout</a></li>
+      <% if(user.isVerified == false) { %>
+      <li><a class="header-link" href="/auth/verify">Verify Email</a></li>
+      <% } %>
+      <li><a class="header-link" href="/user/delete">Delete</a></li>
+      <% } %>
+    </ul>
+  </nav>

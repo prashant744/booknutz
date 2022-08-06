@@ -1,0 +1,74 @@
+.user-input-page {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+  }
+  
+  .user-input-page form {
+    margin-top: 2.5rem;
+    width: max(250px, 60%);
+  }
+  
+  .user-input-page form input {
+    width: 100%;
+    padding: 1rem 1.2rem;
+    font-size: 1.3rem;
+    border: 1px solid var(--color-border);
+    border-radius: 0.5rem;
+    margin-bottom: 0.5rem;
+  }
+  
+  .user-input-page button {
+    width: 100%;
+    font-size: 1.2rem;
+  }
+  
+  .user-input-page .form-section {
+    text-align: left;
+  }
+  
+  .user-input-page .form-section label {
+    font-size: 1.1rem;
+    font-weight: 700;
+    margin-bottom: 10px;
+    color: white;
+  }
+  
+  .verification-page {
+    display: flex;
+    flex-direction: column;
+  }
+  
+  .verification-page #send-mail-btn {
+    width: 100%;
+    background-color: hsl(var(--color-secondary-hue), 85%, 16%);
+    padding: 0.7rem;
+  }
+  
+  .verification-page-note-wrapper {
+    width: max(250px, 60%);
+  }
+  
+  .verification-page .verification-page-note {
+    text-align: justify;
+    font-size: 1.3rem;
+    font-weight: bold;
+    background-color: hsla(var(--color-secondary-hue), 85%, 35%, 0.7);
+    color: rgb(228, 224, 217);
+    padding: 0.7rem;
+    margin-top: 1rem;
+  }
+  
+  @media (max-width: 450px) {
+    .user-input-page input,
+    .user-input-page button {
+      font-size: 1.1rem;
+    }
+  
+    .verification-page .verification-page-note {
+      font-size: 1.1rem;
+      font-weight: bold;
+      padding: 0.5rem;
+      margin-top: 0.8rem;
+    }
+  }

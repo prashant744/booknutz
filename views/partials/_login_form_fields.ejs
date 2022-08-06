@@ -1,0 +1,29 @@
+<% if( username_needed == true ) { %>
+    <div class="form-section">
+      <label for="username">Username</label>
+      <input
+        type="text"
+        placeholder="username"
+        maxlength="30"
+        name="username"
+        minlength="5"
+        value="<%= (user && user.username) ? user.username: '' %>"
+        required
+      />
+    </div>
+    <% } %>
+    
+    <div class="form-section">
+      <label for="email">Email</label>
+      <input
+        type="email"
+        name="email"
+        value="<%= user && user.email %>"
+        required
+        placeholder="example@email.com"
+      />
+    </div>
+    <div class="form-section">
+      <label for="password">Password</label>
+      <input type="password" name="password" required />
+    </div>
